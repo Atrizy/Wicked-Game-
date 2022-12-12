@@ -1,0 +1,29 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Node2D.tscn" type="PackedScene" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 380.25, 31 )
+
+[node name="TestMap" type="Node2D"]
+position = Vector2( -1, 0 )
+
+[node name="KinematicBody2D" parent="." instance=ExtResource( 2 )]
+position = Vector2( 78, 10 )
+
+[node name="Camera2D" type="Camera2D" parent="KinematicBody2D"]
+scale = Vector2( 0.333333, 0.333333 )
+current = true
+smoothing_speed = 8.0
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 381, 183 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 628, 510 )
+shape = SubResource( 1 )
